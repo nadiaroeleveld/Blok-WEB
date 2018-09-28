@@ -102,16 +102,6 @@ button {
     border-bottom: solid #003082;
 }
 
-#uitgelicht,
-#alle1,
-#bundels {
-    background-color: white;
-    border-bottom: solid rgb(153, 153, 153);
-    margin: auto;
-    width: 95%;
-    max-width: 20em;
-}
-
 #foto {
     width: 100%;
     max-width: 20em;
@@ -129,22 +119,16 @@ select {
     margin-top: 0;
 }
 
-select option[value="1"] {
+
+
+/*OPMAAK VAN DE RUIMTE IN DE ARTIKELEN */
+
+#uitgelicht,
+#alle1,
+#bundels {
     background-color: white;
-}
-
-    {
-    margin-left: -0.5em;
-    display: flex;
-    justify-content: left;
-    overflow-x: scroll;
-}
-
-    {
-    width: 10em;
-    height: 10em;
-    background: rgba(0, 0, 100, 0.5);
-    margin: .5em;
-
-    flex-shrink: 0;
+    border-bottom: solid rgb(153, 153, 153);
+    margin: auto;
+    width: 95%;
+    max-width: 20em;
 }
