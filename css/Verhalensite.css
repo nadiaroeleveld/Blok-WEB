@@ -235,6 +235,13 @@ input[type=text]:focus{
     border: dotted 0.09em;
     border-spacing: 1em;
 }
+    
+body #account form{
+        background-color: white;
+    }
+    body #account input[type=text]{
+        border:solid 0.009em rgb(186, 186, 186);
+    }
 
 #welkom {
     padding: 1em 1em 0.5em 0;
@@ -245,6 +252,7 @@ input[type=text]:focus{
     display: flex;
     overflow-x: scroll;
 }
+    
 
 /* FOOTER BEWERKEN */
 
@@ -288,5 +296,8 @@ footer a:hover{
 }
 }
 @media(min-width:30em){
-    
+    form[action=get]{
+        width: 95%;
+        margin: 0 auto 2em;
+    }
 }
