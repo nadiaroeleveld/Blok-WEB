@@ -379,9 +379,17 @@ html body .form{
 
 /* VORMGEGEVEN VERHAAL BEWERKEN */
 
-main #desktop{
+html body main .verhaal img{
+    width:100%;
+}
+
+/*     NOT WORKING
+html body main .verhaal{
+    background-image: url("../images/Schermen%20responsive%20-%20mobiel.jpg");
+    background-size:cover;
     width: 100%;
 }
+*/
 
 
 /* FOOTER BEWERKEN */
@@ -471,13 +479,25 @@ html body h7{
 }
 @media(min-width:45em){
 
-/* FORMULIER RESPONSIVE */
+/* FORMULIER RESPONSIVE 45em */
     form[action=get]{
         width: 35em;
     }
     
+/* VERHAAL RESPONSIVE 45em */
+
     
-/* OVERZICHTSPAGINA REPSONSIVE */
+/*  NOT WORKING
+ html body .verhaal{
+    background-image: url("../images/Schermen%20responsive%20-%20tablet.jpg");
+    background-size:cover;
+    width: 100%;
+}  
+*/
+
+    
+    
+/* OVERZICHTSPAGINA REPSONSIVE 45em */
 
     header #layer{
         max-width: 35%;
@@ -529,6 +549,8 @@ html body h7{
 }
 
 @media(min-width: 60em){
+    
+    /* OVERZICHTSPAGINA RESPONSIVE 60em */
     
     body form .sorteren{
         max-width: 45em;
@@ -624,7 +646,15 @@ html body h7{
         margin-left: 7em;
     }
     
-
+    /* VERHAAL RESPONSIVE 80em */
+    
+    /* NOT WORKING
+    html body .verhaal{
+    background-image: url("../images/Schermen%20responsive%20-%20desktop.jpg");
+    background-size:cover;
+    width: 100%;
+    */
+}         
     
     
     
