@@ -1,0 +1,638 @@
+/*HELE SITE*/
+
+html {
+    font-family: Open sans, Segoe UI, Myriad, Verdana, sans-serif;
+    box-sizing:border-box;
+    height: 100%;
+    margin:0;
+    position:relative;
+}
+
+body {
+    background-color: rgba(155, 155, 155, 0.3);
+    color: #003082;
+    text-align:center;
+    margin: 0 auto;
+}
+
+
+/*NAVIGATIE BALK BOVENIN SCHERM*/
+
+header nav ul {
+    background-color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.4em;
+    margin: 0em 0em 5em;
+    width:100%;
+}
+
+header #logo {
+    width: 2.5em;
+    margin: 0.5em 0 0 0.5em;
+}
+
+header nav ul li:nth-of-type(2) {
+    margin-left: auto;
+    padding: 0 1.5em;
+    transition: all .2s;
+}
+
+header nav ul li:nth-of-type(3) {
+    margin-right: 1.5em;
+}
+
+
+
+/*INTRO BOVENIN SCHERM */
+
+header #intro {
+    margin-top: -5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-image: url(https://www.ns.nl/binaries/_ht_1448442434385/large/content/gallery/ns-nl/thema-hero-afbeeldingen/thema_reizen-met-een-ov-chipkaart.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    width: 100% 50%;
+    text-align: left;
+    
+}
+
+header #layer {
+    background-color: rgba(51, 51, 153, 0.85);
+    width: 65%;
+    padding: 1.5em 1.5em;
+    margin:auto;
+}
+
+
+/* TITELS */
+body legend, h1{
+    font-size: 1.578rem;
+    margin-top: 2em;
+    font-weight: 400;
+    padding: 0.1em;
+}
+
+body h4{
+  font-size: 1.578rem;
+    font-weight:400;
+    margin-top:0.5em;
+}
+
+body 
+h2{
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding: -1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+/* SECTION UITGELICHT BEWERKEN */
+
+#uitgelicht{
+    display:flex;
+    justify-content:center;
+} 
+/*INFORMATIE IN DE ARTIKELEN */
+
+body a {
+    color: #003082;
+    text-decoration: none;
+    font-size: 1.15em;
+    padding: -1.5em;
+}
+
+body p {
+    margin-bottom: 0.2em;
+}
+
+body article p:nth-of-type(2) {
+    margin-bottom: 2em;
+    font-size: 0.65em;
+}
+
+body button {
+    margin-bottom: 1.5em;
+    padding: 0.8em;
+    background-color: rgb(0, 102, 204);
+    border: none;
+    width: 7.5em;
+    color: white;
+    /* Horizontal offset | vertical offset | blur radius | spread radius (optional) | color */
+    box-shadow: inset 0 -0.2em #003082;
+    transition: all.2s;
+}
+
+body button:hover {
+    background-color: #003399;
+    
+}
+
+body select {
+    color: #003082;
+    background: rgb(255, 204, 0);
+    border: none;
+    border-bottom: solid rgb(204, 153, 102);
+    padding: 0.5em;
+    float: center;
+    margin-bottom: 1.5em;
+    padding: 0.8em;
+    transition: all .1s linear;
+    font-size: 1.05em;
+}
+
+body form .sorteren{
+    list-style:none;
+    display:flex;
+    justify-content:space-around;
+    max-width: 33em;
+    margin-left:auto;
+    margin-right: 3em;
+    margin-top: -1.7em;
+    border-bottom: solid rgb(196, 196, 196);
+    padding:0em;
+    opacity: 0;
+    padding-bottom: 0.3em;
+}
+
+.sorteren li:hover{
+    border-bottom: solid #003082;
+    font-weight:bold;
+}
+
+body select:hover{
+    background-color: rgb(183, 156, 82);
+}
+
+
+
+/*OPMAAK VAN DE RUIMTE IN DE ARTIKELEN */
+
+body section article {
+    border-bottom: solid rgb(153, 153, 153);
+    background-color: white;
+    max-width: 20em;
+    min-width: 20em;
+    margin: 0.5em;
+    max-height: 25em;
+}
+
+body article img {
+    max-width:100%;
+    display: inline-block;
+}
+
+
+body section article .articleimage{
+    position: relative;
+    width: 100%;
+    max-width: 50em;
+}
+
+body section article .articleimage img{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.icon{
+    font-size: 1.5rem;
+    position:absolute;
+    top: 87.5%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align:center;
+    background-color: rgba(196, 196, 196, 0.5);
+    width: 100%;
+    
+}
+.icon:hover{
+    background-color: rgba(196, 196, 196, 0.9); 
+}
+
+.fa-heart-o:hover{
+    color: #eee;
+}
+
+body option {
+    background-color: white;
+    border: none;
+    border-bottom: solid rgb(255, 204, 0);
+}
+
+#alle1,
+#bundels {
+    display:flex;
+    overflow-x:scroll;
+}
+
+body .eigenbundel{
+    border-bottom: none;
+    font-size: 1em;
+    padding-bottom: 0.1em;
+}
+
+
+/*OPMAAK FORMULIER OP INLOGPAGINA */
+body #header #logo{
+    width: 3em;
+    margin: 1.6em;
+    display:flex;
+}
+
+fieldset {
+    border: none;
+    margin: 2em 1em 0 1em;
+    display: flex;
+    text-align: left;
+}
+
+body main section form fieldset legend {
+    font-size: 1.578rem;
+    margin: 1.2em 0 1.2em 0;
+
+}
+
+form[action=get] {
+    background-color: rgb(255, 204, 0);
+    padding: 0.5em 0em 5em 0;
+    margin: 1em;
+}
+body #inloggen{
+    background-color: white;
+    margin: 0.8em;
+    padding-bottom: 1em;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+
+form a {
+    font-size: 0.75rem;
+    border-bottom: solid rgba(153, 153, 153, 0.7);
+    border-bottom-width: medium;
+    padding: 0 0 0.7em 0;
+    transition: all .05s; 
+}
+
+input[type=radio]{
+    vertical-align: top;
+    float:left;
+}
+
+form a:hover {
+    border-color: blue;
+    border-bottom-width: medium;
+}
+
+form p {
+    padding: 1em 1em 1em 0;
+}
+
+input[type=submit] {
+    margin: 1.7em 0em 1.7em 0;
+    padding: 0.8em;
+    background-color: rgb(0, 102, 204);
+    border: none;
+    width: 8em;
+    color: white;
+    border-bottom: solid #003082;
+}
+
+body main #account input[type=submit]{
+    margin-top: 4em;
+    margin-bottom: -3em;
+    opacity:0;
+    transition:all. 3s;
+}
+
+
+body main #account input[type=submit].visible{
+    opacity: 100;
+}
+
+input[type=submit]:hover {
+    background-color: #003399;
+    transition: all.2s;
+}
+
+
+input[type=text] {
+    width: 97%;
+    border: none;
+    height: 3em;
+    margin: 1em 0.5em 1em 0;
+    padding-left: 1em
+}
+#inloggen form a {
+    float:left;
+    margin-left: 2.4em;
+}
+
+input[type=text]:focus{
+    border: dotted 0.09em;
+    border-spacing: 1em;
+}
+    
+body #account form{
+    background-color: white;
+    margin: 3em;
+    margin-bottom: 4em;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 90%
+}
+
+body #account input[type=text]{
+        border:solid 0.009em rgb(186, 186, 186);
+    }
+
+body h6{
+    padding: 1em 1em 0.5em 0;
+    font-size: 2.1em;
+    text-align:left;
+    margin-left: 0.9em;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+    position: relative;
+    font-weight:100;
+}
+
+
+
+body #achtergrond {
+    background-color:white;
+    margin:0;
+}
+
+html body .form{
+    display:flex;
+    flex-direction:column;
+} 
+
+
+/* VORMGEGEVEN VERHAAL BEWERKEN */
+
+main #desktop{
+    width: 100%;
+}
+
+
+/* FOOTER BEWERKEN */
+
+footer{
+    font-size:0.9em;
+    background-color:white;
+    padding: 2em;
+    color:#478bf7;
+    text-align:left;
+    position:absolute;
+    width:100%;
+    padding: 1em 1em 1em 3em;
+}
+h5{
+    color: #003082;
+    font-weight:bold;
+    font-size:1em
+}
+footer a{
+    color:#73a2ef;
+    transition:all .05s;
+    padding-left:1em;
+    position: relative;
+    min-width: 8em;
+}
+footer a::before{
+    content:">";
+    transition:all .2s;
+    position:absolute;
+    
+    left: 0;
+}
+footer a:hover::before{
+    left:.25em;
+    
+}
+footer a:hover{
+    color: #003082;
+    
+}
+footer ul li{
+    list-style:none;
+}
+footer #column2{
+    margin-right: 5em;
+}
+footer section:nth-of-type(2) ul{
+    display:flex;
+    flex-direction:column;
+    margin-top: 4em;
+}
+footer section:nth-of-type(2) li a{
+    color:#c6c6c6; 
+}
+footer section:nth-of-type(2) li a:hover{
+    color:#003082;
+}
+
+.footerbutton {
+    transform: translateX(-100%);
+    transition: translateX 0.5s;
+}
+.footerbutton.movein {
+    transform: translateX(0);
+}
+
+
+/* PAGINA MET ALLE VERHALEN BEWERKEN */
+
+html body h7{
+    font-size: 2em;
+    text-align: left;
+}
+
+
+/* OVERZCHTSPAGINA RESPONSIVE */
+@media(min-width:30em){
+    footer ul{
+        display:flex;
+        justify-content:flex-start;
+        padding: 0em 2em;
+    }
+    footer #column1{
+        margin-right:10em;
+    }
+}
+@media(min-width:45em){
+
+/* FORMULIER RESPONSIVE */
+    form[action=get]{
+        width: 35em;
+    }
+    
+    
+/* OVERZICHTSPAGINA REPSONSIVE */
+
+    header #layer{
+        max-width: 35%;
+        margin-left:auto;
+        margin-right:3em;
+        height: 22em
+     }
+    
+    
+    body #uitgelicht article{
+        margin-top: -32.3em;
+        margin-left: -20em;
+        max-height: 24em;
+    }
+    
+    body #uitgelicht h4{
+        margin-bottom: 0.5em
+    }
+    
+    body #titeluitgelicht{
+        opacity: 0
+    }
+    
+    body #alleverhalen{
+        margin-top: -7em;
+    }
+    body form select{
+        margin: 0em;
+        opacity: 0;
+    }
+    
+    
+    body legend, h1:nth-of-type(2){
+        text-align:left;
+        margin-left: 2em;
+        margin-bottom: -1em;
+        margin-top: 1.5em;
+    }   
+    
+    body form .sorteren{
+        opacity: 1;
+        max-width: 27em;
+        margin-bottom: -1em;
+    }
+    
+    body .eigenbundel{
+        text-align: left;
+    }
+}
+
+@media(min-width: 60em){
+    
+    body form .sorteren{
+        max-width: 45em;
+        margin-right: 4em;
+    }
+    
+    #alle1,
+    #bundels{
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+}
+    
+     /* FORMULIER RESPONSIVE 70em */
+    
+    @media(min-width: 70em){
+    html body .form{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+    
+    
+    html body #inloggen{
+        padding-top: -2em;
+        max-height: 47.4em;
+        margin-top: 3em;
+        margin-left: 7em;
+        margin-right: 1em;
+    }
+    html body #account{
+        margin-top: -7em;
+        width: 42em;
+        margin-left: 2em;
+        margin-right: 4em; 
+        padding-bottom:1em;
+    }
+        
+    html body #inloggen form[action=get]{
+        margin-bottom: 3em;
+        padding-bottom: 10em;
+        margin-left: 1.7em;
+    }
+    
+    body #header #logo{
+        padding-top: 3em;
+        margin-left: 1em;
+    }
+}
+
+
+@media(min-width:80em){
+    
+    /* OVERZICHTSPAGINA RESPONSIVE 80em */
+    body header #intro #layer{
+        max-width: 35%;
+        margin-right: 20em;
+        height: 18em;
+    } 
+    body #uitgelicht article{
+        margin-left: -45em;
+        margin-top: -29.2em;
+        max-height: 22em;
+    }
+    body #uitgelicht article p{
+        margin: 0.5em;
+    }
+
+    body form .sorteren{
+        max-width: 55em;
+        margin-right: 12em;
+    }
+    
+    #alle1,
+    #bundels{
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+    
+    /* FOOTER RESPONSIVE 80em */
+    footer ul{
+        margin-left: 10em;
+    }
+    
+    /* INLOGPAGINA HEADER RESPONSIVE */
+    
+    body #header #logo{
+        width: 4em;
+        margin-left:9em;
+    }
+    
+    body legend, h1:nth-of-type(2){
+        margin-left: 7em;
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
