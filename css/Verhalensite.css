@@ -270,7 +270,6 @@ body #inloggen{
     padding-bottom: 1em;
     margin-left:auto;
     margin-right:auto;
-    width: 92%;
     
 }
 
@@ -343,12 +342,11 @@ input[type=text]:focus{
     
 body #account form{
     background-color: white;
-    margin: 1.75em;
+    margin: 3em;
     margin-bottom: 4em;
     margin-left:auto;
     margin-right:auto;
-    width: 92%;
-    max-width: inherit;
+    max-width: 90%
 }
 
 body #account input[type=text]{
@@ -366,6 +364,8 @@ body h6{
     font-weight:100;
 }
 
+
+
 body #achtergrond {
     background-color:white;
     margin:0;
@@ -379,8 +379,8 @@ html body .form{
 
 /* VORMGEGEVEN VERHAAL BEWERKEN */
 
-html body #desktop{
-     
+main #desktop{
+    width: 100%;
 }
 
 
@@ -476,10 +476,6 @@ html body h7{
         width: 35em;
     }
     
-    body #inloggen{
-        width: 38em;
-    }
-    
     
 /* OVERZICHTSPAGINA REPSONSIVE */
 
@@ -555,14 +551,22 @@ html body h7{
         justify-content:center;
     }
     
+    
     html body #inloggen{
         padding-top: -2em;
         max-height: 47.4em;
         margin-top: 3em;
+        margin-left: 7em;
+        margin-right: 1em;
     }
     html body #account{
-        margin-top: -5.8em;
+        margin-top: -7em;
+        width: 42em;
+        margin-left: 2em;
+        margin-right: 4em; 
+        padding-bottom:1em;
     }
+        
     html body #inloggen form[action=get]{
         margin-bottom: 3em;
         padding-bottom: 10em;
@@ -570,7 +574,8 @@ html body h7{
     }
     
     body #header #logo{
-        padding-top: 4em;
+        padding-top: 3em;
+        margin-left: 1em;
     }
 }
 
@@ -612,7 +617,7 @@ html body h7{
     
     body #header #logo{
         width: 4em;
-        margin-left:7em;
+        margin-left:9em;
     }
     
     body legend, h1:nth-of-type(2){
