@@ -20,17 +20,8 @@ checkbox.addEventListener('change', function(){
 
 })
 
-/* MICROINTERACTIE 2 -  */   
 
 
-var icon = document.querySelector("i");
-var articleimage = document.querySelector(".articleimage");
-
-articleimage.addEventListener('click', function(){
-    icon.classList.add("filledheart");
-    
-})
-    
 
 
 

@@ -2,10 +2,10 @@
 
 html {
     font-family: Open sans, Segoe UI, Myriad, Verdana, sans-serif;
-    box-sizing:border-box;
     height: 100%;
     margin:0;
     position:relative;
+    max-width: 100%
 }
 
 body {
@@ -18,32 +18,121 @@ body {
 
 /*NAVIGATIE BALK BOVENIN SCHERM*/
 
+html header form[action="#"]{
+    background-color: rgb(255, 204, 0);
+    margin-top: -17em;
+    margin-bottom: 7em;
+    height: 7em;
+    transition:all 1s;
+    max-width: 25em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+html header form[action="#"].show{
+    margin-top: -5em;
+    margin-bottom: 0;
+}
+
+
+html header nav ul section li a::before{
+    content:'';
+    transition:all .2s;
+    position:absolute;
+    left: 0;
+}
+
+html header nav ul section li button.hide:hover::before{
+    left:.25em;
+}
+
+html header form fieldset input[type="text"]::after{
+    content: ;
+}
+
+html header form fieldset div{
+    position:absolute;
+}
+html header form fieldset div a#searchIcon{
+    position: relative;
+    margin-left: -2emem;
+    margin-right: -5em;
+    float:right;
+    border:none;
+}
+
+html header form#search legend{
+    margin: 0.2em 0 0.2em 0;
+    color: white;
+    font-size: 1.2em;
+    position:relative;
+    margin-left: 3.3em;
+}
+
+html header form#search input{
+    margin-bottom: 1em;
+    position:absolute;
+    max-width: 80%;
+    margin-top:0;
+    margin-left: 4em;
+}
+
 header nav ul {
     background-color: white;
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 0.4em;
     margin: 0em 0em 5em;
-    width:100%;
+    width: 100%;
+}
+
+header nav ul section{
+    display:flex;
+    margin-left:auto;
+    width: 20em;
+}
+
+
+header nav ul li{
+    font-size: 1em;
 }
 
 header #logo {
-    width: 2.5em;
-    margin: 0.5em 0 0 0.5em;
+    width: 3em;
+    margin: 1.1em 4em 0 1em;
 }
 
-header nav ul li:nth-of-type(2) {
-    margin-left: auto;
-    padding: 0 1.5em;
-    transition: all .2s;
+header nav ul section li:nth-of-type(1) svg{
+    width: 1.6em;
+    margin-right: 0.7em;
+    padding-bottom: 0.25em;
+    margin-top:0.4em;
+}
+
+header nav ul section li:nth-of-type(1){
+    margin-right: 0.7em;
 }
 
 header nav ul li:nth-of-type(3) {
-    margin-right: 1.5em;
+    padding: 0 1.5em;
+    transition: all .2s;
+    margin-top: 0.1em;
 }
 
+header nav ul li button{
+    border: none;
+    background-color: white;
+}
+
+header nav ul li svg{
+    margin-bottom: -0.7em;
+}
+
+
+header nav ul li a{
+    font-size: 1em;
+}
 
 
 /*INTRO BOVENIN SCHERM */
@@ -56,23 +145,28 @@ header #intro {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    width: 100% 50%;
     text-align: left;
+    height: 15em
     
 }
 
 header #layer {
-    background-color: rgba(51, 51, 153, 0.85);
+    background-color: rgba(51, 51, 153, 0.90);
     width: 65%;
-    padding: 1.5em 1.5em;
-    margin:auto;
+    padding: 1.5em 1em 1em;
+    padding-bottom: -2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+header #layer > h1{
+    margin-top: 0.5em;
+}
 
 /* TITELS */
+
 body legend, h1{
     font-size: 1.578rem;
-    margin-top: 2em;
     font-weight: 400;
     padding: 0.1em;
 }
@@ -80,7 +174,8 @@ body legend, h1{
 body h4{
   font-size: 1.578rem;
     font-weight:400;
-    margin-top:0.5em;
+    margin-top:1.8em;
+    margin-bottom: 0;
 }
 
 body 
@@ -97,7 +192,19 @@ h2{
 #uitgelicht{
     display:flex;
     justify-content:center;
+    flex-direction:column;
+    margin-top: 5em;
 } 
+
+#uitgelicht article{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body #uitgelicht h1{
+    margin-top:-2em;
+    
+}
 /*INFORMATIE IN DE ARTIKELEN */
 
 body a {
@@ -107,18 +214,13 @@ body a {
     padding: -1.5em;
 }
 
-body p {
-    margin-bottom: 0.2em;
-}
-
-body article p:nth-of-type(2) {
-    margin-bottom: 2em;
-    font-size: 0.65em;
-}
-
-body button {
+html body article p {
+    margin-top: 0.5em;
     margin-bottom: 1.5em;
-    padding: 0.8em;
+}
+
+body article a.leesnu{
+    padding: 0.7em;
     background-color: rgb(0, 102, 204);
     border: none;
     width: 7.5em;
@@ -126,12 +228,15 @@ body button {
     /* Horizontal offset | vertical offset | blur radius | spread radius (optional) | color */
     box-shadow: inset 0 -0.2em #003082;
     transition: all.2s;
+    font-size: 0.9em;
 }
 
-body button:hover {
-    background-color: #003399;
+body section a.leesnu:hover,
+body section a.leesnu:active {
     
+    background-color:#003399;
 }
+
 
 body select {
     color: #003082;
@@ -173,13 +278,14 @@ body select:hover{
 
 /*OPMAAK VAN DE RUIMTE IN DE ARTIKELEN */
 
-body section article {
+body div section article {
     border-bottom: solid rgb(153, 153, 153);
     background-color: white;
-    max-width: 20em;
-    min-width: 20em;
-    margin: 0.5em;
-    max-height: 25em;
+    width: 17em;
+    width: 19em;
+    margin: 2em;
+    height: 22em;
+    
 }
 
 body article img {
@@ -188,13 +294,13 @@ body article img {
 }
 
 
-body section article .articleimage{
+body section article > div{
     position: relative;
     width: 100%;
     max-width: 50em;
 }
 
-body section article .articleimage img{
+body section article > div img{
     width: 100%;
     height: auto;
     position: relative;
@@ -203,21 +309,18 @@ body section article .articleimage img{
 .icon{
     font-size: 1.5rem;
     position:absolute;
-    top: 87.5%;
+    top: 107%;
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align:center;
-    background-color: rgba(196, 196, 196, 0.5);
+    background-color: rgba(196, 196, 196, 0.3);
     width: 100%;
     
 }
-.icon:hover{
-    background-color: rgba(196, 196, 196, 0.9); 
-}
 
 .fa-heart-o:hover{
-    color: #eee;
+    color:rgb(255, 204, 0);
 }
 
 body option {
@@ -228,14 +331,20 @@ body option {
 
 #alle1,
 #bundels {
-    display:flex;
-    overflow-x:scroll;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 }
 
-body .eigenbundel{
-    border-bottom: none;
+html body #bundels{
+    margin-bottom: 4em;
+    margin-top: 2em;
+}
+
+body a.eigenbundel{
+    background-color:rgb(0, 102, 204);
+    padding: 0.7em;
+    color:white;
     font-size: 1em;
-    padding-bottom: 0.1em;
 }
 
 
@@ -269,8 +378,7 @@ body #inloggen{
     margin: 0.8em;
     padding-bottom: 1em;
     margin-left:auto;
-    margin-right:auto;
-    
+    margin-right:auto;  
 }
 
 form a {
@@ -364,8 +472,6 @@ body h6{
     font-weight:100;
 }
 
-
-
 body #achtergrond {
     background-color:white;
     margin:0;
@@ -378,18 +484,50 @@ html body .form{
 
 
 /* VORMGEGEVEN VERHAAL BEWERKEN */
+html body main > section{
+    background-color: #eee;
+    margin-top: -4.9em;
+}
 
-html body main .verhaal img{
+html body main > section h1{
+    font-size: 2em;
+    text-align: center;
+    padding-top: 1em;
+    margin-bottom: -1.3em;
+}
+
+html body main > section img{
+    width: 1.8em;
+    height: 1.8em;
+    margin-right:-15em;
+    margin-bottom: 2em;
+    padding: 0.2em;
+}
+
+html body main section#verhaal{
+    background-image: url(../images/Schermen%20responsive%20-%20mobiel.jpg);
     width:100%;
+    height:100%;
+    background-size:cover;
+    display: flex;
+    justify-content:center;
+    
 }
 
-/*     NOT WORKING
-html body main .verhaal{
-    background-image: url("../images/Schermen%20responsive%20-%20mobiel.jpg");
-    background-size:cover;
-    width: 100%;
+html body main section#verhaal p{
+    max-width: 16em;
+    max-height: 1em;
+    overflow: scroll;
+    background-color: white;
+    font-size: 1.2em;
+    padding: 1.5em;
+    margin-top: 5em
 }
-*/
+
+html body main section#verhaal p::-webkit-scrollbar {
+display: none;
+}
+
 
 
 /* FOOTER BEWERKEN */
@@ -404,11 +542,13 @@ footer{
     width:100%;
     padding: 1em 1em 1em 2em;
 }
+
 h5{
     color: #003082;
     font-weight:bold;
     font-size:1em
 }
+
 footer a{
     color:#73a2ef;
     transition:all .05s;
@@ -416,45 +556,42 @@ footer a{
     position: relative;
     min-width: 8em;
 }
+
 footer a::before{
     content:">";
     transition:all .2s;
     position:absolute;
-    
     left: 0;
 }
+
 footer a:hover::before{
-    left:.25em;
-    
+    left:.25em;  
 }
+
 footer a:hover{
-    color: #003082;
-    
+    color: #003082; 
 }
+
 footer ul li{
     list-style:none;
 }
+
 footer #column2{
     margin-right: 5em;
 }
+
 footer section:nth-of-type(2) ul{
     display:flex;
     flex-direction:column;
     margin-top: 4em;
 }
+
 footer section:nth-of-type(2) li a{
     color:#c6c6c6; 
 }
+
 footer section:nth-of-type(2) li a:hover{
     color:#003082;
-}
-
-.footerbutton {
-    transform: translateX(-100%);
-    transition: translateX 0.5s;
-}
-.footerbutton.movein {
-    transform: translateX(0);
 }
 
 
@@ -466,69 +603,240 @@ html body h7{
 }
 
 
-/* OVERZCHTSPAGINA RESPONSIVE */
+
+/* BUNDEL AANMAKEN PAGINA BEWERKEN */
+
+html body > p {
+    margin: 0 7em 2em;
+}
+
+html body div section{
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 4em;
+}
+
+body div article{
+    margin: 2em;
+    justify-content: center;
+    height: 18em;
+}
+
+/* CONTAINER BEWERKEN */
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+    margin-left: 17.2em;
+    margin-top: -20.5em;
+
+}
+
+/* Default checkbox onzichtbaar maken */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Eigen checkbox maken */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3em;
+  width: 3em;
+  background-color: #eee;
+}
+
+
+
+/* Grijze achtergrond als hover */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Als checkbox gechecked is, blauwe achtergrond */
+.container input:checked ~ .checkmark {
+  background-color: #478bf7;
+}
+
+/* Checkmark maken wanneer aangeklikt */
+.checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+/* Style de checkmark/indicator */
+.container .checkmark:after {
+  left: 18px;
+  top: 10px;
+  width: 10px;
+  height:20px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* BEWERK MICRO-INTERACTIE SHOW BUTTON */
+
+html body .normal{
+    position:fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 3em;
+    transform: translateX(-100%);
+    transition: transform 1.1s; 
+    background-color: rgb(0, 102, 204);
+    color:white;
+    font-size: 1.2em; 
+    border:none;
+    border-bottom: solid 0.1em #003082;
+}
+
+html body .transitioning{
+    transform: translateX(0);
+}
+
+html body .transitioning:hover{
+    background-color: #003082;
+}
+
+/* MIJN VERHALEN PAGINA BEWERKEN */
+
+html body section#mijnVerhalen article{
+    margin: 1.5em;
+}
+
+html body section#mijnVerhalen article:nth-of-type(1) div:nth-of-type(2){
+    background-color: rgb(255, 204, 0);
+    margin-bottom: -2.2em;
+    width: 45%;
+    margin-top: -0.4em;
+    font-size: 0.8em;
+    
+    
+}
+
+/* BUNDEL PAGINA BEWERKEN */
+
+body div{
+    
+}
+body div h1 + a{
+    padding: 0.7em;
+    background-color: rgb(0, 102, 204);
+    width: 7.5em;
+    color: white;
+    transition: all.2s;
+    font-size: 0.9em;
+    box-shadow: inset 0 -0.2em #003082;
+    position:absolute;
+    margin-bottom: 2em;
+}
+
+
+html body section#bundel{
+    display:inline-grid;
+    grid-template-columns:1fr;
+    margin-bottom: 4em;
+    margin-top:5em;
+}
+
+html body section#bundel article{
+    width: 15em;
+    height: 15em;
+    font-size: 80%;
+    margin: 0.5em;
+}
+
+html body section#bundel article h4{
+    margin-top:0.2em;
+    font-size: 1.5em;
+}
+
+html body section#leesOok{
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    background-color: #eee;
+    width: 100%;
+    padding-bottom: 2em;
+    margin-bottom: 0;
+}
+
+html body section#leesOok article{
+    margin-left:auto;
+    margin-right: auto;
+    width: 15em;
+    height: 14em;
+}
+
+html body section#leesOok article h4{
+    margin-top: 0.3em;
+    font-size: 1.3em;  
+}
+
+html body section#leesOok div img{
+    position:relative;
+}
+
+html body section#leesOok div a{
+    position:absolute;
+    margin-top: -6em;
+    margin-left: -4em;
+    padding: 0.8em 0em;
+}
+
+html body div section#leesOok h2{
+    background-color:white;
+    margin: 0;
+    padding: 1em;
+    font-size: 1.5em
+}
+
+
+
+
+
+/* WEBSITE RESPONSIVE  */
+
+/* OVERZICHTSPAGINA RESPONSIVE */
 @media(min-width:30em){
-    footer ul{
-        display:flex;
-        justify-content:flex-start;
-        padding: 0em 2em;
+    
+    header nav ul section{
+    width: 25em;
     }
+    
     footer #column1{
-        margin-right:10em;
+        margin-right:6em;
+        margin-top: 1.4em;
+    }
+    
+    footer section:nth-of-type(2){
+        margin-top: -1.2em;
+    }
+    
+    /* MAAK BUNDELS OP BUNDELPAGINA RESPONSIVE 30em */
+    
+    html body div section#bundel{
+    display:inline-grid;
+    grid-template-columns:1fr 1fr;
+    margin-bottom: 4em;
+    margin-top:5em;
     }
 }
+
 @media(min-width:45em){
 
 /* FORMULIER RESPONSIVE 45em */
     form[action=get]{
         width: 35em;
     }
-    
-/* VERHAAL RESPONSIVE 45em */
-
-    
-/*  NOT WORKING
- html body .verhaal{
-    background-image: url("../images/Schermen%20responsive%20-%20tablet.jpg");
-    background-size:cover;
-    width: 100%;
-}  
-*/
-
-    
-    
-/* OVERZICHTSPAGINA REPSONSIVE 45em */
-
-    header #layer{
-        max-width: 35%;
-        margin-left:auto;
-        margin-right:3em;
-        height: 22em
-     }
-    
-    
-    body #uitgelicht article{
-        margin-top: -32.3em;
-        margin-left: -20em;
-        max-height: 24em;
-    }
-    
-    body #uitgelicht h4{
-        margin-bottom: 0.5em
-    }
-    
-    body #titeluitgelicht{
-        opacity: 0
-    }
-    
-    body #alleverhalen{
-        margin-top: -7em;
-    }
-    body form select{
-        margin: 0em;
-        opacity: 0;
-    }
-    
     
     body legend, h1:nth-of-type(2){
         text-align:left;
@@ -537,15 +845,122 @@ html body h7{
         margin-top: 1.5em;
     }   
     
+    body #account h6{
+        text-align: center;
+    }
+    
+    header #logo {
+        width: 3em;
+        margin: 0.5em 4em 0 1em;
+    }
+
+    
+/* OVERZICHTSPAGINA REPSONSIVE 45em */
+
+    
+    header nav ul section  {
+        margin-right: 3em;
+
+    }
+
+    header #layer{
+        max-width: 35%;
+        margin-left:auto;
+        margin-right:auto;
+        height: 17em;
+        font-size: 80%
+     }
+    header #layer h1{
+        margin-bottom: 0
+    }
+    
+    body #uitgelicht article{
+        margin-bottom: 4em;
+    }
+    body #uitgelicht article div.icon{
+         margin-top: -1.3em;
+    }
+    
+    body #uitgelicht h4{
+        margin-bottom: -0.4em;
+        margin-top: 0.5em;
+    }
+    
+    body #alleverhalen{
+        margin-top: -5em;
+        margin-bottom: -1.5em;
+    }
+    
     body form .sorteren{
         opacity: 1;
         max-width: 27em;
-        margin-bottom: -1em;
     }
     
-    body .eigenbundel{
-        text-align: left;
+    body form .sorteren > li{
+        margin-bottom: -0.4em
     }
+
+    
+    body form select{
+        margin: 0em;
+        opacity: 0;
+        margin-bottom: -3em;
+        
+    }
+    
+    body a.eigenbundel{
+    background-color:rgb(255, 204, 0);
+    padding: 0.4em;
+    border-bottom: rgb(204, 153, 102);
+    color:#003082;
+    }
+    
+    /* MAAK BUNDEL GRID RESPONSIVE 45em */
+    
+    /* MAAK BUNDELS OP BUNDELPAGINA RESPONSIVE 30em */
+    
+    html body div section#bundel{
+    display:inline-grid;
+    grid-template-columns:1fr 1fr 1fr;
+    margin-bottom: 4em;
+    margin-top:5em;
+    }
+    
+    /* FOOTER RESPONSIVE 45em */
+    
+    footer{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0em 2em;
+    }
+    
+    footer ul{
+        display:flex;
+        flex-direction: flex-start;
+    }
+    
+    footer #column1{
+        margin-right:6em;
+        margin-top: 1.4em;
+    }
+    
+    footer section:nth-of-type(2){
+        margin-top: -1.9em;
+        margin-bottom: 2em;
+    }
+
+}
+
+/* SORTEERMENU RESPONSIVE 50em */
+@media(min-width:50em){
+    body form .sorteren{
+        margin-right: 7em;
+    }
+    
+    body legend, h1:nth-of-type(2){
+        margin-left: 5em;
+    }
+    
 }
 
 @media(min-width: 60em){
@@ -553,8 +968,8 @@ html body h7{
     /* OVERZICHTSPAGINA RESPONSIVE 60em */
     
     body form .sorteren{
-        max-width: 45em;
-        margin-right: 4em;
+        max-width: 30em;
+        margin-right: 8em;
     }
     
     #alle1,
@@ -562,11 +977,40 @@ html body h7{
         margin-left: 4em;
         margin-right: 4em;
     }
+    
+    body legend, h1:nth-of-type(2){
+        margin-left: 6em;
+        
+    }
+
+    
+    /* FOOTER RESPONSIVE 60em */
+    
+    footer ul{
+        display:flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        padding: 0em 2em;
+    }
 }
     
-     /* FORMULIER RESPONSIVE 70em */
+    
     
     @media(min-width: 70em){
+        
+    /* OVERZICHTSPAGINA RESPONSIVE 70em */
+        
+        body legend, h1:nth-of-type(2){
+        margin-left: 8em;
+        }
+        
+        body form .sorteren{
+            max-width: 35em;
+        }
+        
+        
+    /* FORMULIER RESPONSIVE 70em */
+        
     html body .form{
         display: flex;
         flex-direction: row;
@@ -599,22 +1043,29 @@ html body h7{
         padding-top: 3em;
         margin-left: 1em;
     }
+        
+        
+    /* MAAK BUNDEL GRID RESPONSIVE */
+    
+    html body div section{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    }
+
 }
 
 
 @media(min-width:80em){
     
     /* OVERZICHTSPAGINA RESPONSIVE 80em */
+
+    
     body header #intro #layer{
-        max-width: 35%;
-        margin-right: 20em;
-        height: 18em;
+        max-width: 50%;
+        height: 13em;
+        margin-top: 2em;
     } 
-    body #uitgelicht article{
-        margin-left: -45em;
-        margin-top: -29.2em;
-        max-height: 22em;
-    }
+    
     body #uitgelicht article p{
         margin: 0.5em;
     }
@@ -631,19 +1082,35 @@ html body h7{
     }
     
     /* FOOTER RESPONSIVE 80em */
+    
     footer ul{
         margin-left: 10em;
     }
     
-    /* INLOGPAGINA HEADER RESPONSIVE */
+    /* INLOGPAGINA HEADER RESPONSIVE 80em */
     
     body #header #logo{
         width: 4em;
         margin-left:9em;
     }
     
+    
+    /* TITELS RESPONSIVE 80em */
     body legend, h1:nth-of-type(2){
         margin-left: 7em;
+        
+    }
+    
+    /* MAAK BUNDEL GRID RESPONSIVE 80em */
+    
+    html body div section{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    html body div section#mijnVerhalen{
+        display:inline-grid;
+        grid-template-columns: 1fr 1fr;
     }
     
     /* VERHAAL RESPONSIVE 80em */
